@@ -15,4 +15,3 @@ ys = [sin(n) for n in xs]
 pizza = Graficadora()
 
 pizza.graficar(xs, ys)
-pizza.graficar(xs, xs)
