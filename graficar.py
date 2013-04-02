@@ -10,6 +10,7 @@ class Graficadora(Frame):
 	def __init__(self):
 		"""Inicializa el entorno ttk"""
 		self.root = Tk()
+		self.root.geometry("640x480")
 		self.root.columnconfigure(0, weight = 1)
 		self.root.rowconfigure(0, weight = 1)
 		
@@ -46,11 +47,12 @@ class Graficadora(Frame):
 
 	def invertir_eje_y(self, ys, escala_y):
 		"""Invierte el eje y para que se muestre la grafica como debe de ser"""
-		ys_inv=[]
+		ys_inv = []
+		altura_area_de_dibujo = int(self.canvas.cget("height"))
 		for i in range(len(ys)):
 			ys_inv.append(-1 * ys[i])
 		for i in range(len(ys_inv)):
-			ys_inv[i] += int(self.canvas.cget("height")) / escala_y
+			ys_inv[i] += altura_area_de_dibujo / escala_y
 
 		return ys_inv
 
