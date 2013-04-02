@@ -1,7 +1,16 @@
 from graficar import Graficadora
+from math import sin,pi
 
-xs = range(100)
-ys = [n**2 for n in xs]
+def drange(start, stop, step):
+	r = start
+	while r < stop:
+		yield r
+		r += step
+
+tau = 2 * pi
+temp = drange(0.0, tau, 0.01)
+xs = [n for n in temp]
+ys = [sin(n) for n in xs]
 
 pizza = Graficadora()
 
